@@ -1,21 +1,22 @@
-let btn = document.querySelector("button");
-btn.addEventListener("click", () => {
+const btn = document.querySelector("button");
+const img = document.querySelector("img");
+
+function getRandomDogImage() {
   fetch("https://dog.ceo/api/breeds/image/random")
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      return res.json();
+    })
     .then((data) => {
-      console.log(data);
-      document.querySelector("img").src = data.message;
+      img.src = data.message;
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
     });
-});
-fetch("https://dog.ceo/api/breeds/image/random")
-  .then((res) => res.json())
-  .then((data) => {
-    document.querySelector("img").src = data.message;
-    console.log("se ejecuto por primera vez ");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+}
+
+btn.addEventListener("click", getRandomDogImage);
+
+getRandomDogImage();
