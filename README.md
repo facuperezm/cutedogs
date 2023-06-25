@@ -4,7 +4,7 @@ This is a simple HTML, CSS and JavaScript app that shows pictures of cute dogs e
 
 ## General info
 
-The app makes a request to [Dog CEO API](https://dog.ceo/dog-api/), and shows randomly a picture of a dog.
+The app makes a request to [Dog CEO API](https://dog.ceo/dog-api/), and shows randomly a picture of a dog. One of my firsts websites coded with pure HTML, CSS and JavaScript.
 
 ## Technologies
 
